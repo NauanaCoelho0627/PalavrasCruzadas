@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palavras Cruzadas</title>
+</head>
+<style>
+    body{
+        background-color: #DDC78F;
+        margin: 0;
+        padding: 0;
+    }
+    .cruzada{
+        display: grid;
+        /* position: absolute; */
+    }
+    p{
+        border: 1px solid black;
+        width: 22%;
+        text-align: center;
+        justify-content: center;
+    }
+    .primeiraP{
+        display: flex;
+        position: fixed;
+        left: 20%;
+        top: 5%;
+        width: 8%;
+        justify-content: space-between;
+    }
+
+    .segundaP{
+        position: fixed;
+        left: 26%;
+        top: 10%;
+        width: 8%;
+        justify-content: space-between;
+    }
+    .segundaP span {
+        position: fixed;
+        top: 5%;
+        left: 26.8%;
+    }
+
+    .terceiraP{
+        display: flex;
+        position: fixed;
+        left: 5.5%;
+        top: 15.5%;
+        width: 20%;
+        justify-content: space-between;
+    }
+    .terceiraP p {
+        width: 10%;
+    }
+    .terceiraP .segundaPart{
+        display: flex;
+        position: fixed;
+        left: 28.5%;
+        top: 15.5%;
+        width: 13%;
+        justify-content: space-between;
+    }
+    .terceiraP .segundaPart p{
+        width: 15%;
+    }
+
+    .quartaP{
+        display: flex;
+        position: fixed;
+        left: 28%;
+        top: 25%;
+        width: 8%;
+        justify-content: space-between;
+    }
+
+    .quintaP{
+        position: fixed;
+        left: 29.1%;
+        top: 30%;
+        width: 8.3%;
+        justify-content: space-between;
+    }
+    .quintaP span{
+        position: fixed;
+        top: 24.5%;
+        left: 29.8%;
+    }
+
+    .sextaP{
+        position: fixed;
+        left: 34%;
+        top: 5%;
+        width: 8.3%;
+        justify-content: space-between;
+    }
+    .sextaP span{
+        position: fixed;
+        top: 5%;
+        left: 34.7%;
+    }
+    .sextaP .segundaPart{
+        position: fixed;
+        top: 20%;
+        left: 34%;
+        width: 8.3%;
+    }
+
+    .setimaP{
+        position: fixed;
+        left: 61.3%;
+        top: 25%;
+        width: 9%;
+        justify-content: space-between;
+    }
+    .setimaP span{
+        position: fixed;
+        left: 62%;
+        top: 24%;
+    }
+    .setimaP .segundaPart{
+        position: fixed;
+        left: 61.3%;
+        top: 40%;
+        width: 9%;
+    }
+
+    .oitavaP{
+        display: flex;
+        position: fixed;
+        left: 31.5%;
+        top: 35.4%;
+        width: 40%;
+        justify-content: space-between;
+    }
+    .oitavaP p{
+        width: 5%;
+    }
+    .oitavaP span{
+        position: fixed;
+        top: 38%;
+        left: 28%;
+    }
+
+    .nonaP{
+        position: fixed;
+        left: 28.5%;
+        top: 5%;
+        width: 8%;
+        height: 5%;
+    }
+    .nonaP .pi{
+        margin-top: -3%;
+    }
+    .nonaP span {
+        position: fixed;
+        top: 21.8%;
+        left: 29.2%;
+    }
+
+    .decimaP{
+        position: fixed;
+        left: 39.5%;
+        top: 10.5%;
+        width: 8%;
+        height: 5%;
+    }
+    .decimaP span{
+        position: fixed;
+        left: 39.8%;
+        top: 10%;
+    }
+
+    .decimaUmP{
+        position: fixed;
+        left: 45%;
+        top: 66.5%;
+        width: 9.5%;
+        justify-content: space-between;
+    }
+    .decimaUmP span{
+        position: fixed;
+        left: 45.5%;
+        top: 61%;
+    }
+
+    .decimaDoisP{
+        display: flex;
+        position: fixed;
+        top: 83%;
+        left: 24.5%;
+        width: 20%;
+        justify-content: space-between;
+    }
+    .decimaDoisP p{
+        width: 10%;
+    }
+    .decimaDoisP .segundaPart{
+        display: flex;
+        position: fixed;
+        top: 83%;
+        left: 48%;
+        width: 5%;
+        justify-content: space-between;
+    }
+    .decimaDoisP .segundaPart p{
+        width: 40%;
+    }
+    .decimaDoisP span{
+        position: fixed;
+        top: 85.5%;
+        left: 22%;
+    }
+
+    .decimaTerceiroP{
+        position: fixed;
+        width: 9%;
+        top: 20%;
+        left: 15%;
+    }
+    .decimaTerceiroP span{
+        position: fixed;
+        left: 15.5%;
+        top: 15%;
+    }
+
+    .decimaQuartaP{
+        position: fixed;
+        width: 8.5%;
+        top: 39.5%;
+        left: 42.4%;
+    }
+    .decimaQuartaP span{
+        position: fixed;
+        left: 42.7%;
+        top: 35.3%;
+    }
+
+    .decimaCincoP{
+        position: fixed;
+        left: 50.5%;
+        top: 40%;
+        width: 9%;
+        justify-content: space-between;
+    }
+    .decimaCincoP span{
+        position: fixed;
+        left: 50.9%;
+        top: 35%;
+    }
+    .decimaCincoP .pi2{
+        padding: 8.5px 0 8.5px 0;
+    }
+
+    .decimaSextaP{
+        display: flex;
+        position: fixed;
+        left: 35%;
+        top: 61.7%;
+        width: 15%;
+        justify-content: space-between;
+    }
+    .decimaSextaP p{
+        width: 14%;
+    }
+    .decimaSextaP .segundaPart{
+        display: flex;
+        position: fixed;
+        left: 53%;
+        top: 61.7%;
+        width: 8%;
+        justify-content: space-between;
+    }
+    .decimaSextaP .segundaPart p{
+        width: 25%;
+    }
+
+
+
+    .question{
+    background-color: antiquewhite;
+    width: 40vh;
+    height: 20%;
+    top: 70%;
+    left: 75%;
+    position: fixed;
+   }
+
+   input{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 2px;
+   }
+   button{
+    background-color: transparent;
+    color: black;
+    width: 8vh;
+    height: 3.5vh;
+   }
+   button:hover{
+    color: white;
+    background-color: black;
+   }
+
+   .placar{
+    position: absolute;
+    margin-left: 80%;
+    width: 15%;
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+   .pontos{
+    display: flex;
+   }
+   .erros{
+    display: flex;
+   }
+   .h3{
+    margin-left: 5%;
+   }
+</style>
+<body>
+    <div class="placar">
+        <div class="pontos">
+            <h3>0</h3><h3 class="h3">Pontos</h3>
+        </div>
+        <div class="erros">
+            <h3>0</h3><h3 class="h3">Erros</h3>
+        </div>
+    </div>
+
+    <div class="cruzada">
+        <div class="primeiraP">
+            <span>1</span>
+            <p>C</p>
+            <p>P</p>
+            <p>U</p>
+        </div>
+        <div class="segundaP">
+            <span>2</span>
+            <p>L</p>
+            <p>A</p>
+        </div>
+        <div class="terceiraP">
+            <span>3</span>
+            <p>R</p>
+            <p>E</p>
+            <p>G</p>
+            <p>I</p>
+            <p>S</p>
+            <p>T</p>
+            <p>R</p>
+            <div class="segundaPart">
+                <p>D</p>
+                <p>O</p>
+                <p>R</p>
+                <p>E</p>
+                <p>S</p>
+            </div>
+        </div>
+        <div class="quartaP">
+            <span>4</span>
+            <p>R</p>
+            <p>A</p>
+            <p>M</p>
+        </div>
+
+        <div class="quintaP">
+            <span>5</span>
+            <p>O</p>
+            <p>M</p>
+        </div>
+
+        <div class="sextaP">
+            <span>6</span>
+            <p>E</p>
+            <p>P</p>
+            <div class="segundaPart">
+                <p>O</p>
+            </div>
+        </div>
+
+        <div class="setimaP">
+            <span>7</span>
+            <p>F</p>
+            <p>L</p>
+            <div class="segundaPart">
+                <p>S</p>
+                <p>H</p>
+            </div>
+        </div>
+
+        <div class="oitavaP">
+            <span>8</span>
+            <p>E</p>
+            <p>M</p>
+            <p>O</p>
+            <p>R</p>
+            <p>I</p>
+            <p>A</p>
+            <p></p>
+            <p>D</p>
+            <p>E</p>
+            <p></p>
+            <p>M</p>
+            <p>A</p>
+            <p>S</p>
+            <p>S</p>
+            <p>A</p>
+        </div>
+
+        <div class="nonaP">
+            <span>9</span>
+            <p>A</p>
+            <p class="pi">M</p>
+        </div>
+
+        <div class="decimaP">
+            <span>10</span>
+            <p>C</p>
+        </div>
+
+        <div class="decimaUmP">
+            <span>11</span>
+            <p>A</p>
+            <p>T</p>
+            <p>A</p>
+            <p>B</p>
+            <p>U</p>
+            <p>S</p>
+        </div>
+
+        <div class="decimaDoisP">
+            <span>12</span>
+            <p>A</p>
+            <p>D</p>
+            <p>R</p>
+            <p>E</p>
+            <p>S</p>
+            <p>S</p>
+            <p></p>
+            <div class="segundaPart">
+                <p>U</p>
+            <p>S</p>
+            </div>
+        </div>
+
+        <div class="decimaTerceiroP">
+            <span>13</span>
+            <p>5</p>
+        </div>
+
+        <div class="decimaQuartaP">
+            <span>14</span>
+            <p>7</p>
+        </div>
+
+        <div class="decimaCincoP">
+            <span>15</span>
+            <p>U</p>
+            <p>A</p>
+            <p>L</p>
+            <p class="pi2"></p>
+            <p>C</p>
+            <p>O</p>
+            <p>R</p>
+            <p>E</p>
+        </div>
+
+        <div class="decimaSextaP">
+            <span>16</span>
+            <p>Q</p>
+            <p>U</p>
+            <p>A</p>
+            <p>D</p>
+            <p></p>
+            <div class="segundaPart">
+                <p>O</p>
+                <p>R</p>
+                <p>E</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="questao"></div>
+        <input type="text" placeholder="Suas respostas Aqui!!">
+        <button onclick="">Ir</button>
+    </div>
+    
+</body>
+</html>
